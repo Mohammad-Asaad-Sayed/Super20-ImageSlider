@@ -1,0 +1,56 @@
+.slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 100%;
+  position: relative;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+  display: none; /* Hide all slides by default */
+}
+
+.slide.active {
+  opacity: 1;
+  display: block; /* Display the active slide */
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+}
+
+.controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.caption {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.slide.active .caption {
+  opacity: 1;
+}
